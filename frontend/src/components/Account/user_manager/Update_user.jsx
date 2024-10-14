@@ -48,6 +48,7 @@ function Update_user() {
       })
       .then((result) => {
         console.log(result);
+        toast.success("User Updated successfully !", { autoClose: 2000 });
         setTimeout(() => {
           navigate("/user_rept"); // Redirect to home after success
         }, 1500); // Optional delay

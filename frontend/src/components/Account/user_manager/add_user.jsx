@@ -3,6 +3,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import "../user_manager/user_mg_nav/user_fill_form.css";
 import Navbar from "../user_manager/user_mg_nav/user_mg_nav";
+import { ToastContainer, toast } from "react-toastify";
 
 function AddUser() {
   const [name, setName] = useState("");
@@ -56,7 +57,7 @@ function AddUser() {
       })
       .then((result) => {
         console.log(result);
-        alert("User added successfully");
+        toast.success("User added successfully !", { autoClose: 3000 });
         setTimeout(() => {
           navigate("/user_rept");
         }, 2000);
@@ -156,6 +157,7 @@ function AddUser() {
           Submit
         </button>
       </form>
+      <ToastContainer />
     </>
   );
 }
